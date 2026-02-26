@@ -4,67 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ user.ism }} | Portfolio</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            /* Misoldagi kabi yumshoq ranglar palitrasi */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --primary-color: #6f42c1; /* Binafsha rang aksent */
+            --secondary-color: #007bff; /* Moviy rang aksent */
+            --card-bg: #ffffff;
+            --accent-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Yumshoq gradient fon */
+        }
+
         body {
-            background: #f4f7f6;
+            background-color: var(--bg-color);
+            background-image: var(--accent-gradient); /* Orqa fonga gradient berish */
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif; /* Zamonaviy shrift */
             min-height: 100vh;
             display: flex;
             align-items: center;
-            font-family: 'Segoe UI', sans-serif;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
         }
+
         .main-card {
-            background: white;
-            border-radius: 35px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            max-width: 480px;
-            width: 90%;
-            margin: auto;
+            background: var(--card-bg);
+            border-radius: 30px; /* Kattaroq burchaklar */
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1); /* Yumshoq soya */
+            max-width: 600px;
+            width: 100%;
             text-align: center;
+            transition: transform 0.3s ease;
         }
+
+        .main-card:hover {
+            transform: translateY(-5px); /* Sichqoncha ustiga kelganda ozgina ko'tarilish */
+        }
+
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
-            border: 6px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            background-color: #eee;
+            border: 8px solid #fff; /* Oq hoshiya */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Rasm soyasi */
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
         }
-        .name-text { font-size: 1.7rem; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; }
-        .info-text { color: #6c757d; font-size: 1rem; margin-bottom: 20px; }
+
+        .profile-img:hover {
+            transform: rotate(5deg) scale(1.05); /* Rasm ustiga kelganda effekt */
+        }
+
+        .name-text { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            color: #1a1a1a; 
+            margin-bottom: 10px; 
+            letter-spacing: -1px;
+        }
+
+        .info-text { 
+            color: #6c757d; 
+            font-size: 1.1rem; 
+            margin-bottom: 30px; 
+            font-weight: 300;
+        }
         
+        /* Qiziqishlar bo'limi */
+        .interest-section {
+            margin-bottom: 35px;
+        }
+
         .interest-tag {
-            background: #f8f9fa;
-            padding: 7px 15px;
-            border-radius: 12px;
-            margin: 4px;
+            background: #f1f3f5;
+            padding: 8px 18px;
+            border-radius: 50px; /* To'liq yumaloq burchaklar */
+            margin: 5px;
             display: inline-block;
-            font-size: 0.85rem;
-            color: #333;
-            border: 1px solid #eee;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid #e9ecef;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .interest-tag:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Aloqa tugmalari */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Avtomatik joylashuv */
+            gap: 15px;
+            margin-bottom: 35px;
         }
 
         .contact-btn {
             border-radius: 15px;
-            padding: 12px;
-            margin: 6px 0;
+            padding: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.3s;
-            color: white;
+            transition: 0.3s ease;
+            color: white !important;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .btn-tel { background: #28a745; }
+
+        .btn-tel { background-color: #28a745; }
         .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .btn-tg { background: #0088cc; }
-        .contact-btn i { margin-right: 12px; font-size: 1.2rem; }
-        .contact-btn:hover { opacity: 0.9; color: white; transform: translateY(-2px); }
+        .btn-tg { background-color: #0088cc; }
+
+        .contact-btn i { margin-right: 10px; font-size: 1.2rem; }
+        .contact-btn:hover { 
+            opacity: 0.9; 
+            transform: translateY(-3px); /* Ozgina ko'tarilish */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Loyihalar bo'limi */
+        .projects-section {
+            text-align: left; /* Matnni chapga tekshirish */
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .project-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .project-item:hover {
+            background: #e9ecef;
+        }
+
+        .project-icon {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
@@ -73,33 +177,34 @@
     <img src="{{ url_for('static', filename='rasm.jpg') }}" class="profile-img" alt="Profil">
     
     <h1 class="name-text">{{ user.ism }}</h1>
-    <p class="info-text">{{ user.unv }} <br> ({{ user.guruh }})</p>
+    <p class="info-text">{{ user.unv }} <br> <span class="badge bg-light text-dark fw-normal">{{ user.guruh }}</span></p>
 
-    <div class="mb-4">
-        <h6 class="text-muted fw-bold mb-2">🌟 Qiziqishlarim</h6>
+    <div class="interest-section">
+        <h6 class="text-muted fw-bold mb-3 text-uppercase small" style="letter-spacing: 1px;">🌟 Qiziqishlarim</h6>
         {% for x in user.qiziqishlar %}
         <span class="interest-tag">{{ x }}</span>
         {% endfor %}
     </div>
 
-    <div class="d-grid gap-2">
-        <button onclick="showNumber()" id="phoneBtn" class="contact-btn btn-tel shadow-sm border-0">
-            <i class="fas fa-phone-alt"></i> <span id="btnText">Telefon orqali bog'lanish</span>
+    <div class="contact-grid">
+        <button onclick="showNumber()" id="phoneBtn" class="contact-btn btn-tel shadow-sm">
+            <i class="fas fa-phone-alt"></i> <span id="btnText">Telefon</span>
         </button>
         <a href="https://instagram.com/{{ user.insta }}" target="_blank" class="contact-btn btn-insta shadow-sm">
             <i class="fab fa-instagram"></i> Instagram
         </a>
         <a href="https://t.me/{{ user.tg }}" target="_blank" class="contact-btn btn-tg shadow-sm">
-            <i class="fab fa-telegram-plane"></i> Telegram orqali bog'lanish
+            <i class="fab fa-telegram-plane"></i> Telegram
         </a>
     </div>
 
-    <div class="mt-4 pt-3 border-top">
-        <h6 class="text-muted fw-bold mb-3">💻 Loyihalarim</h6>
-        <div class="list-group list-group-flush">
+    <div class="projects-section">
+        <h6 class="projects-header text-muted text-uppercase small" style="letter-spacing: 1px;">💻 Loyihalarim</h6>
+        <div class="project-list">
             {% for loyiha in user.loyihalar %}
-            <div class="list-group-item bg-transparent py-2" style="font-size: 0.95rem; color: #444;">
-                <i class="fas fa-code-branch me-2 text-primary"></i> {{ loyiha }}
+            <div class="project-item">
+                <i class="fas fa-code-branch project-icon"></i> 
+                <span>{{ loyiha }}</span>
             </div>
             {% endfor %}
         </div>
@@ -107,9 +212,21 @@
 </div>
 
 <script>
-function showNumber() {
-    document.getElementById('btnText').innerText = "{{ user.tel }}";
-    document.getElementById('phoneBtn').style.background = "#1e7e34";
-    document.getElementById('phoneBtn').querySelector('i').className = "fas fa-check-circle";
-}
+    function showNumber() {
+        const btn = document.getElementById('phoneBtn');
+        const text = document.getElementById('btnText');
+        text.innerText = "{{ user.tel }}";
+        btn.style.background = "#1e7e34"; /* To'qroq yashil */
+        btn.querySelector('i').className = "fas fa-check-circle"; /* Tasdiqlash belgisi */
+        
+        /* Ozgina vaqtdan keyin asl holiga qaytarish (ixtiyoriy) */
+        /* setTimeout(() => {
+            text.innerText = "Telefon";
+            btn.style.background = "#28a745";
+            btn.querySelector('i').className = "fas fa-phone-alt";
+        }, 3000); */
+    }
 </script>
+
+</body>
+</html>
