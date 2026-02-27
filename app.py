@@ -8,16 +8,15 @@ class Portfolio:
     "ism": "Abibullayev Begdulla Rashidovich",
     "unv": "Dasturiy injiniring yo'nalishi 3-kurs talabasi",
     "guruh": "304-guruh",
-    "bio": "Men Samarqand shahrida tug'ilganman. Yoshligimdan texnologiya va dasturlashga qiziqaman. Hozirda Samarqand Davlat Universiteti talabasiman.",
+    "bio": "Men Qoraqalpog'iston Respublikasi Beruniy tumanida tug'ilganman. Yoshligimdan sun'iy intellekt, informatika va dasturlashga qiziqaman. Hozirda Samarqand Davlat Universiteti talabasiman.",
     "maqsadlar": [
-        "Full-stack developer bo'lish",
-        "Sun'iy intellektni o'rganish",
-        "Xalqaro IT kompaniyalarda ishlash"
+        "Sun'iy intellekt va dasturlashni chuqur o'rganish",
+        "Xalqaro katta IT kompaniyalarda ish yuritish"
     ],
-    "tel": "+998 90 123 45 67",
-    "insta": "begdulla005",
-    "tg": "begdulla005",
-    "qiziqishlar": ["Python", "Java", "C++", "Backend"],
+    "tel": "+998905040811",
+    "insta": "abibullayev_begdulla",
+    "tg": "abibullayev_begdulla",
+    "qiziqishlar": ["Python", "Java", "C++", "Backend", "Fronted"],
     "loyihalar": ["Onlayn xarid tizimi", "Shaxsiy Portfolio"]
 }
 @app.route('/')
