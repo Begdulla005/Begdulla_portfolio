@@ -19,22 +19,38 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--soft-bg);
             color: #1e293b;
-            margin: 0;
-            padding: 0;
-            /* Flex-ni olib tashladik, endi sahifa pastga o'sadi */
+            scroll-behavior: smooth;
         }
 
-        /* Orqa fonga gradient effekt (image_6e659e.jpg kabi) */
-        .bg-gradient-blur {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 0% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
-            z-index: -1;
+        /* --- 1. Navigatsiya menyusi (image_6e565a.png kabi) --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
+        .navbar-brand { font-weight: 800; color: #1e293b; }
+        .navbar-brand span { color: var(--primary-purple); }
+
+        .nav-link {
+            font-weight: 600;
+            color: #64748b !important;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            border-radius: 10px;
+        }
+
+        /* --- 2. Hero Section --- */
         .hero-section {
-            padding: 80px 0 40px;
+            padding: 120px 0 60px;
             text-align: center;
         }
 
@@ -44,114 +60,104 @@
             padding: 50px 30px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
             max-width: 800px;
-            margin: 0 auto 40px;
-            border: 1px solid rgba(0,0,0,0.02);
+            margin: 0 auto;
         }
 
         .profile-img {
-            width: 160px; height: 160px;
+            width: 150px; height: 150px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #fff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
 
-        .interest-tag {
-            background: #f1f5f9;
-            color: var(--primary-purple);
-            padding: 8px 20px;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin: 5px;
-            display: inline-block;
-        }
-
-        /* Yangi bo'limlar uslubi (image_6e4f5d.png kabi) */
+        /* --- 3. Info Cards (image_1bffb6.png ko'rinishi) --- */
         .info-card {
             background: white;
             border-radius: 30px;
-            padding: 40px;
+            padding: 35px;
             height: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
-        .info-card:hover {
-            transform: translateY(-10px);
+        /* --- 4. Footer (image_6e56c0.png kabi) --- */
+        .footer {
+            padding: 60px 0 30px;
+            text-align: center;
+            background: #f1f5f9;
+            margin-top: 80px;
         }
 
-        .icon-circle {
-            width: 50px; height: 50px;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--primary-purple);
-            border-radius: 15px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 20px;
-        }
-
-        .contact-btn {
-            border-radius: 20px;
-            padding: 14px 25px;
-            font-weight: 700;
+        .social-icons a {
+            width: 45px; height: 45px;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: white;
+            border-radius: 12px;
+            margin: 0 8px;
+            color: #64748b;
+            text-decoration: none;
             transition: 0.3s;
-            border: none;
-            display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .btn-tg { background: #0088cc; color: white; }
-        .btn-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
+        .social-icons a:hover {
+            background: var(--primary-purple);
+            color: white;
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body>
 
-<div class="bg-gradient-blur"></div>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Begdulla <span>Portfolio</span></a>
+        <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="#">Bosh sahifa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bio">Men haqimda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#loyihalar">Loyihalar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aloqa">Aloqa</a></li>
+            </ul>
+        </div>
+        <div class="d-none d-lg-block">
+            <button class="btn btn-light rounded-circle shadow-sm">☀️</button>
+        </div>
+    </div>
+</nav>
 
 <div class="container">
     <section class="hero-section">
         <div class="main-profile-card">
-            <img src="{{ url_for('static', filename='rasm.jpg') }}" class="profile-img" alt="Profil">
-            <h1 class="fw-bold display-5 mb-2">{{ user.ism }}</h1>
-            <p class="text-muted mb-4">{{ user.unv }} | {{ user.guruh }}</p>
-            
-            <div class="mb-4">
+            <img src="{{ url_for('static', filename='rasm.jpg') }}" class="profile-img">
+            <h1 class="fw-bold mb-2">{{ user.ism }}</h1>
+            <p class="text-muted mb-4">{{ user.unv }}</p>
+            <div class="d-flex justify-content-center gap-2 mb-4">
                 {% for x in user.qiziqishlar %}
-                <span class="interest-tag">{{ x }}</span>
+                <span class="badge rounded-pill bg-light text-primary p-2 px-3">{{ x }}</span>
                 {% endfor %}
             </div>
-
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://t.me/{{ user.tg }}" class="contact-btn btn-tg">
-                    <i class="fab fa-telegram-plane"></i> Telegram
-                </a>
-                <a href="https://instagram.com/{{ user.insta }}" class="contact-btn btn-insta">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
+            <a href="#bio" class="btn btn-primary btn-lg rounded-pill px-5" style="background: var(--primary-purple); border:none;">
+                Batafsil ma'lumot <i class="fas fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </section>
 
-    <section class="row g-4 mb-5">
+    <section id="bio" class="row g-4 mb-5">
         <div class="col-lg-6">
             <div class="info-card">
-                <div class="icon-circle">👨‍💻</div>
-                <h3 class="fw-bold mb-3">Bio</h3>
-                <p class="text-muted" style="line-height: 1.8; font-size: 1.05rem;">
-                    {{ user.bio }}
-                </p>
+                <h3 class="fw-bold mb-4">👨‍💻 Bio</h3>
+                <p class="text-muted">{{ user.bio }}</p>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="info-card">
-                <div class="icon-circle">🎯</div>
-                <h3 class="fw-bold mb-3">Maqsadlarim</h3>
+                <h3 class="fw-bold mb-4">🎯 Maqsadlarim</h3>
                 <ul class="list-unstyled">
-                    {% for maqsad in user.maqsadlar %}
-                    <li class="mb-3 d-flex align-items-center">
-                        <i class="fas fa-check-circle text-primary me-3"></i>
-                        <span class="text-muted">{{ maqsad }}</span>
+                    {% for m in user.maqsadlar %}
+                    <li class="mb-3">
+                        <i class="fas fa-check-circle text-primary me-2"></i> {{ m }}
                     </li>
                     {% endfor %}
                 </ul>
@@ -159,6 +165,23 @@
         </div>
     </section>
 </div>
+
+<footer class="footer" id="aloqa">
+    <div class="container">
+        <h2 class="fw-bold mb-2" style="color: var(--primary-purple);">{{ user.ism }}</h2>
+        <p class="text-muted mb-4">{{ user.unv }}</p>
+        
+        <div class="social-icons mb-5">
+            <a href="https://t.me/{{ user.tg }}"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://instagram.com/{{ user.insta }}"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <hr class="opacity-10">
+        <p class="text-muted small">© 2026 {{ user.ism }}. Barcha huquqlar himoyalangan.</p>
+    </div>
+</footer>
 
 </body>
 </html>
