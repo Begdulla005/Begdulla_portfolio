@@ -80,7 +80,7 @@
             object-fit: cover;
         }
 
-        /* --- Tugma Animatsiyasi (image_1baa54.png uslubida) --- */
+        /* --- Tugma Animatsiyasi --- */
         .btn-custom {
             background: var(--primary-gradient);
             color: white;
@@ -97,7 +97,7 @@
             color: white;
         }
 
-        /* --- Info Cards & Ko'nikmalar (image_6e5699.png uslubida) --- */
+        /* --- Info Cards & Ko'nikmalar --- */
         .info-card {
             background: white;
             border-radius: 30px;
@@ -149,7 +149,11 @@
             transform: translateY(-5px) rotate(8deg);
         }
 
-        /* Bo'lim sarlavhalari uchun */
+        /* Telefon tugmasi uchun maxsus rang */
+        .social-icons a.phone-btn:hover {
+            background: #22c55e;
+        }
+
         .section-tag {
             background: #ede9fe;
             color: var(--primary-purple);
@@ -261,6 +265,8 @@
         <p class="text-muted mb-4 fs-6">{{ user.unv }} | 304-guruh</p>
         
         <div class="social-icons mb-5">
+            <a href="tel:{{ user.tel }}" class="phone-btn" title="Qo'ng'iroq qilish"><i class="fas fa-phone"></i></a>
+            
             <a href="https://t.me/{{ user.tg }}" target="_blank"><i class="fab fa-telegram-plane"></i></a>
             <a href="https://instagram.com/{{ user.insta }}" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
