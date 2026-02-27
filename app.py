@@ -4,14 +4,23 @@ app = Flask(__name__)
 
 class Portfolio:
     def __init__(self):
-        self.ism = "Abibullayev Begdulla Rashidovich"
-        self.unv = "Dasturiy injiniring yo'nalishi 3-kurs talabasi"
-        self.guruh = "304-guruh"
-        self.tel = "+998905040811"
-        self.insta = "abibullayev_begdulla"
-        self.tg = "abibullayev_begdulla"
-        self.qiziqishlar = ["Python", "Java", "C++", "HTML/CSS", "Backend", "Fronted"]
-        self.loyihalar = ["Onlayn xarid tizimi", "Shaxsiy Portfolio"]
+        user = {
+    "ism": "Begdulla",
+    "unv": "Dasturiy injiniring yo'nalishi talabasi",
+    "guruh": "3-kurs",
+    "bio": "Men Qoraqalpog'iston Respublikasi Beruniy tumanida tug'ulganman. Yoshligimdan sun'iy intellekt, informatika va dasturlashga qiziqaman. Hozirda Samarqand Davlat Universiteti Sun'iy intellekt va raqamli texnologiyalar fakultetida o'qiyman. Mening maqsadim - sun'iy intellekt, o'z bilimim va tajribamga tayangan holda mobil ilovalar, qiziqarli o'yinlar yaratish.",
+    "maqsadlar": [
+        "Dasturchi bo'lish va zamonaviy texnologiyalar yaratish",
+        "Har xil qiziqarli loyihalarda faol ishtirok etish",
+        "Sun'iy intellekt va dasturlashni chuqur o'rganish",
+        "Katta IT kompaniyalarida yo'nalishim bo'yicha ish yuritish"
+    ],
+    "tel": "+998 90 504 08 11"
+    "insta": "abibullayev_begdulla"
+    "tg": "abibullayev_begdulla"
+    "qiziqishlar": ["Python", "Java". "C++", "va boshqa dasturlash tilllari"]
+    "loyihalar": ["Portfolio", "Do'kon.uz"]
+}
 
 @app.route('/')
 def index():
