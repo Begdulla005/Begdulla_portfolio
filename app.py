@@ -4,24 +4,22 @@ app = Flask(__name__)
 
 class Portfolio:
     def __init__(self):
-        user = {
-    "ism": "Begdulla",
-    "unv": "Dasturiy injiniring yo'nalishi talabasi",
-    "guruh": "3-kurs",
-    "bio": "Men Qoraqalpog'iston Respublikasi Beruniy tumanida tug'ulganman. Yoshligimdan sun'iy intellekt, informatika va dasturlashga qiziqaman. Hozirda Samarqand Davlat Universiteti Sun'iy intellekt va raqamli texnologiyalar fakultetida o'qiyman. Mening maqsadim - sun'iy intellekt, o'z bilimim va tajribamga tayangan holda mobil ilovalar, qiziqarli o'yinlar yaratish.",
+    user = {
+    "ism": "Abibullayev Begdulla Rashidovich",
+    "unv": "Dasturiy injiniring yo'nalishi 3-kurs talabasi",
+    "guruh": "304-guruh",
+    "bio": "Men Samarqand shahrida tug'ilganman. Yoshligimdan texnologiya va dasturlashga qiziqaman. Hozirda Samarqand Davlat Universiteti talabasiman.",
     "maqsadlar": [
-        "Dasturchi bo'lish va zamonaviy texnologiyalar yaratish",
-        "Har xil qiziqarli loyihalarda faol ishtirok etish",
-        "Sun'iy intellekt va dasturlashni chuqur o'rganish",
-        "Katta IT kompaniyalarida yo'nalishim bo'yicha ish yuritish"
+        "Full-stack developer bo'lish",
+        "Sun'iy intellektni o'rganish",
+        "Xalqaro IT kompaniyalarda ishlash"
     ],
-    "tel": "+998 90 504 08 11"
-    "insta": "abibullayev_begdulla"
-    "tg": "abibullayev_begdulla"
-    "qiziqishlar": ["Python", "Java". "C++", "va boshqa dasturlash tilllari"]
-    "loyihalar": ["Portfolio", "Do'kon.uz"]
+    "tel": "+998 90 123 45 67",
+    "insta": "begdulla005",
+    "tg": "begdulla005",
+    "qiziqishlar": ["Python", "Java", "C++", "Backend"],
+    "loyihalar": ["Onlayn xarid tizimi", "Shaxsiy Portfolio"]
 }
-
 @app.route('/')
 def index():
     user = Portfolio()
